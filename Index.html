@@ -1554,30 +1554,29 @@
 
 
 
-        /* Hero Section Styles */
-        /* Hero Section Styles */
-        .hero-section {
-            position: relative;
+      /* Hero Section Styles */
+.hero-section {
+    position: relative;
     width: 100%;
     height: 60vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* Added to center content vertically */
+    padding-top: 40px; /* Added padding to give space at the top */
+}
 
-        }
-       /* Typography Adjustments */
+/* Typography Adjustments */
 .hero-section .content h1, 
 .hero-section .content p {
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7), -1px -1px 2px rgba(255, 255, 255, 0.5);
-    /* Shadow effect to create contrast */
     text-align: center;
 }
 
-       
-        /* Hero background image animation */
-        .hero-section::before {
-            content: "";
+/* Hero background image animation */
+.hero-section::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -1587,9 +1586,9 @@
     background-position: center;
     animation: changeBackground 20s infinite;
     z-index: 1;
-        }
+}
 
-       /* Keyframes to change the background image every 5 seconds */
+/* Keyframes to change the background image every 5 seconds */
 @keyframes changeBackground {
     0% { background-image: url('1736422675191.jpg'); }
     25% { background-image: url('1736422675151.jpg'); }
@@ -1598,9 +1597,9 @@
     100% { background-image: url('1736422675161.jpg'); }
 }
 
-        /* Overlay styles */
-        .hero-section .overlay {
-            position: absolute;
+/* Overlay styles */
+.hero-section .overlay {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -1611,12 +1610,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-        }
+}
 
-
-        /* Content inside hero section */
-        .hero-section .content {
-            text-align: center;
+/* Content inside hero section */
+.hero-section .content {
+    text-align: center;
     color: #fff;
     z-index: 3;
     padding: 20px;
@@ -1625,9 +1623,9 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-        }
+}
 
-       /* Hero Text Styling */
+/* Hero Text Styling */
 .hero-section .content h1 {
     font-size: 3.1rem;
     font-weight: 600;
@@ -1636,6 +1634,7 @@
     opacity: 0;
     animation: fadeIn 2s ease-out forwards;
     animation-delay: 0.5s;
+    padding-top: 40px; /* Added padding to the top */
 }
 
 /* Hero Text Paragraph Styling */
@@ -1648,8 +1647,7 @@
     margin-top: 0;
 }
 
-       
-       /* Button Style */
+/* Button Style */
 .hero-section .content .button-86 {
     all: unset;
     width: 150px;
@@ -1755,6 +1753,7 @@
     /* Hero section heading */
     .hero-section .content h1 {
         font-size: 2rem;
+        padding-top: 20px; /* Adjust padding for small screens */
     }
 
     .hero-section .content p {
@@ -1772,26 +1771,32 @@
         display: none;
     }
 
-  
+    
 }
-/* Hide columns-section by default */
+/* Default: Hide the columns section on larger screens */
 .columns-section {
     display: none;
 }
 
-/* Show new section for columns on small screens */
+/* Show columns section only on small screens (mobile) */
 @media (max-width: 768px) {
     .columns-section {
         display: block;
+        padding: 20px; /* Add padding around the section */
+        text-align: center; /* Center the content */
     }
 
     .columns-section .columns {
+        display: flex;
         flex-direction: column;
+        gap: 20px; /* Adds gap between columns */
+        align-items: center; /* Centers the columns horizontally */
     }
 
     .columns-section .column {
         width: 100%;
-        margin-bottom: 1px;
+        max-width: 400px; /* Limit the width of columns */
+        margin-bottom: 1rem; /* Add some space below each column */
     }
 }
 
@@ -1810,6 +1815,7 @@
         padding: 8px 16px;
     }
 }
+
 
         .chapter567 {
             text-align: center;
